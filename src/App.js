@@ -4,10 +4,26 @@ import logo from './logo.svg'
 import HeaderHome from './HeaderHome'
 import AnuncioHome from './AnuncioHome'
 import Footer from './Footer'
-import LinkCategora from './LinkCategoria'
+import LinkCategoria from './LinkCategoria'
+
+import base from './base'
+
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      categorias: []
+    }
+    base.bindToState('categorias', {
+      context: this,
+      state: 'categorias'
+    })
+  }
+
   render() {
+    let index = 0
     return (
       <div className="App">
         <HeaderHome />
@@ -19,10 +35,14 @@ class App extends Component {
               <AnuncioHome />
             </div>
           <h3>Categorias</h3>
-          <LinkCategora />
-          <LinkCategora />
-          <LinkCategora />
-          <LinkCategora />
+            <div className="row">
+              {this.state.categorias.map(cat => {
+                return [
+                          <LinkCategoria categoria = {cat} />,
+                          ++index%4 === 0 && <div className="w-100"></div>
+                       ]
+              })}
+            </div>
           </div>
         <Footer />
       </div>
