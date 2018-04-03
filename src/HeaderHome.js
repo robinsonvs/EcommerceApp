@@ -7,7 +7,7 @@ const HeaderHome = (props) => {
         <div className="jumbotron">
         <div className="container">
           <h1 className="display-3 text-center"><img src={logo} className="App-logo" alt="logo" width="150" /></h1>
-          <p className="text-center"><a className="btn btn-anuncie btn-lg" to="/novo-anuncio" role="button">Anuncie &raquo;</a></p>
+          <p className="text-center"><a className="btn btn-anuncie btn-lg" to="/novo-anuncio" role="button">Crie Novos Anúncios &raquo;</a></p>
         </div>
         </div>        
     )
