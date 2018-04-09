@@ -3,6 +3,7 @@ import logo from './logo.svg'
 
 import Footer from './Footer'
 import Home from './Home'
+import NovoAnuncio from './NovoAnuncio'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -12,6 +13,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path='/' exact component={Home} />
+          <Route path='/novo-anuncio' exact component={NovoAnuncio} />
           <Footer />
         </div>
       </Router>
