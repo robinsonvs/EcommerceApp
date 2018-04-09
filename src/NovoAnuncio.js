@@ -50,6 +50,14 @@ class NovoAnuncio extends Component {
                             <input type='text' className='form-control' id='nome' placeholder='Nome' ref={(ref) => this.nome=ref}/>
                         </div>
                         <div className='form-group'>
+                            <label htmlFor='nome'>Categorias</label>
+                            <select ref={(ref) => this.categoria = ref }>
+                                { 
+                                    this.props.categorias.map( cat => <option value={cat.url}>{ cat.categoria }</option> )
+                                }
+                            </select>
+                        </div>                         
+                        <div className='form-group'>
                             <label htmlFor='descricao'>Descrição</label>
                             <input type='text' className='form-control' id='descricao' placeholder='Descrição' ref={(ref) => this.descricao=ref}/>
                          </div>                        
